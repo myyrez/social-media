@@ -7,13 +7,13 @@ export default function SearchPage() {
         <div className="">
             <Navbar />
 
-            <div className="p-4 flex flex-col gap-2">
+            <div className="p-4 pb-16 flex flex-col gap-2">
                 <h1 className="text-neutral-50 text-3xl font-bold">Search</h1>
                 <SearchBar />
-            <SearchUserCard />
-            <SearchUserCard />
-            <SearchUserCard />
-            <SearchUserCard />
+                <SearchUserCard />
+                <SearchUserCard />
+                <SearchUserCard />
+                <SearchUserCard />
             </div>
         </div>
     )

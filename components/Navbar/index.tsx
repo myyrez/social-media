@@ -9,13 +9,13 @@ export default function Navbar() {
             bg-neutral-900 text-3xl text-neutral-600
             w-full h-16
             fixed bottom-0
-            flex justify-around items-center
+            flex justify-around items-center z-50
             ">
             <Link href={"/"}> <GoHome className='text-neutral-600' /> </Link>
             <Link href={"/search"}> <BiSearch /> </Link>
             <div> <BiCodeBlock /> </div>
-            <div> <BiHeart /> </div>
-            <div> <BiUser /> </div>
+            <Link href={"/activity"}> <BiHeart /> </Link>
+            <Link href={"/user"}> <BiUser /> </Link>
         </div>
     )
 }

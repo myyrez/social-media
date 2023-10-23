@@ -12,7 +12,6 @@ export default function SearchUserCard() {
                 <div className="flex flex-col">
                     <h1 className="text-neutral-50">USERNAME</h1>
                     <h1 className="text-neutral-600">NAME</h1>
-                    {/* <h1 className="text-neutral-50">FOLLOWERS</h1> */}
                 </div>
                 <FollowButton />
             </div>
