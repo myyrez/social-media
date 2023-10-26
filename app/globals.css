@@ -21,4 +21,18 @@
         scrollbar-width: none;  /* Firefox */
     }
   }
+  .textarea {
+    resize: none;
+    overflow: scroll;
+    display: block;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    width: 100%;
+    overflow-wrap: break-word;
+    /* word-break: break-all; */
+  }
+  .textarea[contenteditable]:empty::before {
+    content: "Write code...";
+    color: rgb(82 82 82);
+  }
 }

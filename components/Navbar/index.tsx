@@ -13,7 +13,7 @@ export default function Navbar() {
             ">
             <Link href={"/"}> <GoHome className='text-neutral-600' /> </Link>
             <Link href={"/search"}> <BiSearch /> </Link>
-            <div> <BiCodeBlock /> </div>
+            <Link href={"/post"}> <BiCodeBlock /> </Link>
             <Link href={"/activity"}> <BiHeart /> </Link>
             <Link href={"/user"}> <BiUser /> </Link>
         </div>
