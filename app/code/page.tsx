@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import PostButton from "@/components/PostButton";
 
-export default function PostPage() {
+export default function CodePage() {
     return (
         <div>
             <Navbar />
