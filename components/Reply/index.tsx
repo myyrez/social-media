@@ -25,7 +25,6 @@ export default function Reply() {
 
                 <div className="flex gap-4">
                     <div>LIKE</div>
-                    <div>COMMENT</div>
                     <div>SHARE</div>
                 </div>
 
