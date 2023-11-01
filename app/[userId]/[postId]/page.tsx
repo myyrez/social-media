@@ -6,11 +6,13 @@ export default function UserPostPage() {
         <div className="text-neutral-50 pb-16">
             <ReplyInput />
 
-            <div className="flex gap-4 p-3 border-b border-neutral-800 text-xl mb-4">
-                <div>X</div>
+            <div className="
+                fixed top-0 w-full bg-neutral-900
+                flex gap-4 p-4 border-b border-neutral-800 text-xl mb-4">
+                <div className="h-7">X</div>
             </div>
             
-            <div className="px-4 flex flex-col gap-4">
+            <div className="px-4 mt-20 flex flex-col gap-4">
                 <div className="flex w-full gap-4 items-center">
                     <div>
                         <div className="bg-neutral-50 h-10 w-10 rounded-full flex flex-none justify-center items-center" />
