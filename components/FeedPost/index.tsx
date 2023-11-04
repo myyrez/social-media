@@ -1,4 +1,13 @@
-export default function FeedPost() {
+import { Post } from "@/app/lib/definitions"
+import { fetchComments, fetchLikes } from "@/app/lib/data"
+import LikeButton from "../LikeButton"
+import ShareButton from "../ShareButton"
+import CommentButton from "../CommentButton"
+
+export default async function FeedPost({ post, }: { post: Post }) {
+    const likes = await fetchLikes()
+    const comments = await fetchComments()
+    
     return (
         <div className="w-full h-fit py-3 px-3 border-b border-neutral-800 flex">
             <div className="
@@ -15,18 +24,18 @@ export default function FeedPost() {
                 flex flex-col gap-2
                 px-4">
                 <div className="flex justify-between">
-                    <h1 className="font-semibold">USERNAME</h1>
+                    <h1 className="font-semibold">{post.username}</h1>
                     <div className="flex gap-4">
                         <h1 className="text-neutral-600">3w</h1>
                     </div>
                 </div>
 
-                <div>post bulk Lorem, lore ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatum sed, beatae ea numquam, labore </div>
+                <div>{post.content}</div>
 
-                <div className="flex gap-4">
-                    <div>LIKE</div>
-                    <div>COMMENT</div>
-                    <div>SHARE</div>
+                <div className="flex gap-5">
+                    <LikeButton post={post} likes={likes} />
+                    <CommentButton post={post} comments={comments} />
+                    <ShareButton />
                 </div>
 
                 <h1 className="text-neutral-600">REPLIES</h1>

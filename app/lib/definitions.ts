@@ -1,7 +1,30 @@
 export type User = {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    password: string;
-  };
+  user_id: number;
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+  created_at: Date;
+};
+
+export type Post = {
+  post_id: number;
+  user_id: number;
+  username: string;
+  content: string;
+  created_at: Date;
+}
+
+export type Likes = {
+  post_id: number;
+  user_id: number;
+}
+
+export type Comments = {
+  comment_id: number;
+  user_id: number;
+  post_id: number;
+  comment_replied_id: number | null;
+  content: string;
+  created_at: Date;
+}

@@ -167,28 +167,28 @@ async function seedComments() {
         `
         console.log('comments table created')
     
-        // const insertComments = await Promise.all([
-        //     sql`
-        //         INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, NULL, 'marys comment to her post')
-        //     `,
-        //     sql`
-        //         INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 1, 1, 'james comment on marys comment of her post')
-        //     `,
-        //     sql`
-        //         INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, 2, 'marys comment on james comment of marys post')
-        //     `,
-        //     sql`
-        //         INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 2, NULL, 'marys comment on james post')
-        //     `,
-        //     sql`
-        //         INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 2, 4, 'james comment on marys comment of his post')
-        //     `
-        // ])
-        // console.log(`seeded ${insertComments.length} comments`)
+        const insertComments = await Promise.all([
+            sql`
+                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, NULL, 'marys comment to her post')
+            `,
+            sql`
+                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 1, NULL, 'james comment on marys comment of her post')
+            `,
+            sql`
+                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, NULL, 'marys comment on james comment of marys post')
+            `,
+            sql`
+                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 2, NULL, 'marys comment on james post')
+            `,
+            sql`
+                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 2, NULL, 'james comment on marys comment of his post')
+            `
+        ])
+        console.log(`seeded ${insertComments.length} comments`)
 
         return {
             createTable,
-            // insertComments
+            insertComments
         }
     } catch (error) {
         console.error('error sending comments:', error)
@@ -197,9 +197,9 @@ async function seedComments() {
 }
 
 (async () => {
-    await seedUsers()
-    await seedPosts()
-    await seedFollows()
-    await seedLikes()
-    // await seedComments()
+    // await seedUsers()
+    // await seedPosts()
+    // await seedFollows()
+    // await seedLikes()
+    await seedComments()
 })()
