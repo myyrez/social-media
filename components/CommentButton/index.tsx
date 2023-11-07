@@ -7,7 +7,6 @@ export default function CommentButton({ post, comments }: { post: Post, comments
     comments.forEach(comment => {
         if (comment.post_id == post.post_id) {
             commentCount++
-            console.log('oi')
         }
     })
 

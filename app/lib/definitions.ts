@@ -24,7 +24,8 @@ export type Comments = {
   comment_id: number;
   user_id: number;
   post_id: number;
+  username: string;
   comment_replied_id: number | null;
-  content: string;
+  comment_content: string;
   created_at: Date;
 }

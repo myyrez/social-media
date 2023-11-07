@@ -156,7 +156,7 @@ async function seedComments() {
                 user_id INT NOT NULL,
                 post_id INT NOT NULL,
                 comment_replied_id INT,
-                content TEXT NOT NULL,
+                comment_content TEXT NOT NULL,
                 created_at TIMESTAMPTZ DEFAULT NOW(),
                 CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users (user_id),
                 CONSTRAINT fk_post FOREIGN KEY (post_id) REFERENCES posts (post_id),
@@ -169,19 +169,19 @@ async function seedComments() {
     
         const insertComments = await Promise.all([
             sql`
-                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, NULL, 'marys comment to her post')
+                INSERT INTO comments (user_id, post_id, comment_replied_id, comment_content) VALUES (1, 1, NULL, 'marys comment to her post')
             `,
             sql`
-                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 1, NULL, 'james comment on marys comment of her post')
+                INSERT INTO comments (user_id, post_id, comment_replied_id, comment_content) VALUES (2, 1, NULL, 'james comment on marys comment of her post')
             `,
             sql`
-                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 1, NULL, 'marys comment on james comment of marys post')
+                INSERT INTO comments (user_id, post_id, comment_replied_id, comment_content) VALUES (1, 1, NULL, 'marys comment on james comment of marys post')
             `,
             sql`
-                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (1, 2, NULL, 'marys comment on james post')
+                INSERT INTO comments (user_id, post_id, comment_replied_id, comment_content) VALUES (1, 2, NULL, 'marys comment on james post')
             `,
             sql`
-                INSERT INTO comments (user_id, post_id, comment_replied_id, content) VALUES (2, 2, NULL, 'james comment on marys comment of his post')
+                INSERT INTO comments (user_id, post_id, comment_replied_id, comment_content) VALUES (2, 2, NULL, 'james comment on marys comment of his post')
             `
         ])
         console.log(`seeded ${insertComments.length} comments`)

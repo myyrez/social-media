@@ -1,4 +1,6 @@
-export default function Reply() {
+import { Post, Comments } from "@/app/lib/definitions"
+
+export default function Reply({ post, comments }: { post: Post, comments: Comments}) {
     return (
         <div className="w-full h-fit py-3 px-3 border-b border-neutral-800 flex">
             <div className="
@@ -15,13 +17,13 @@ export default function Reply() {
                 flex flex-col gap-2
                 px-4">
                 <div className="flex justify-between">
-                    <h1 className="font-semibold">USERNAME</h1>
+                    <h1 className="font-semibold">{comments.username}</h1>
                     <div className="flex gap-4">
                         <h1 className="text-neutral-600">3w</h1>
                     </div>
                 </div>
-
-                <div>post bulk Lorem, lore ipsum dolor</div>
+                
+                <div>{comments.comment_content}</div>
 
                 <div className="flex gap-4">
                     <div>LIKE</div>

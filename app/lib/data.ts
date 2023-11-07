@@ -41,7 +41,8 @@ export async function fetchComments() {
     try {
         const data = await sql<Comments>`
             SELECT * FROM comments
-            LEFT JOIN posts ON comments.post_id = posts.post_id
+            INNER JOIN posts ON comments.post_id = posts.post_id
+            LEFT JOIN users ON comments.user_id = users.user_id
         `
         return data.rows
     } catch (error) {
